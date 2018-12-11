@@ -12,7 +12,8 @@ BATCH_SIZE =50
 INPUT_NODE =17
 OUTPUT_NODE =2
 epoch = 100
-TRAIN_STEPS = 1000*(epoch-1)/epoch
+SAMPLE_SIZE=1000
+TRAIN_STEPS = SAMPLE_SIZE*(epoch-1)/epoch
 
 
 LAYER1_NODE = 32
@@ -42,13 +43,13 @@ accuracy = tf.reduce_mean(tf.cast(correct_pred,tf.float64))
 
 fig = plt.figure()
 plt.subplot
-x1 = np.arange(0,1000*(epoch-1))
+x1 = np.arange(0,SAMPLE_SIZE*(epoch-1))
 y1 = []
-x2 = np.arange(0,1000*(epoch-1))
+x2 = np.arange(0,SAMPLE_SIZE*(epoch-1))
 y2 = []
-x3 = np.arange(0,1000)
+x3 = np.arange(0,SAMPLE_SIZE)
 y3 = []
-x4 = np.arange(0,1000)
+x4 = np.arange(0,SAMPLE_SIZE)
 y4 = []
 # steps = 0
 train_step_num = 0
@@ -61,6 +62,7 @@ with tf.Session() as sess:
     init = tf.global_variables_initializer()
     sess.run(init)
     x_all,y_all = Data_act.load_data()
+    data_obj = Data_act.gen(x_all, y_all, epoch)
     for j in range(epoch):
         # train_step_num = 0
         # acc = 0
@@ -72,7 +74,6 @@ with tf.Session() as sess:
         #     f_acc = 0
         #     acc_t = 0
         #     f_acc_t = 0
-        data_obj = Data_act.gen(x_all,y_all,epoch)
         x_train,y_train,x_test,y_test = next(data_obj)
         print(x_train.shape)
         for i in range(int(TRAIN_STEPS)):
