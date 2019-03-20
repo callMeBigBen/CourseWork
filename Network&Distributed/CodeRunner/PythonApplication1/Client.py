@@ -8,10 +8,10 @@ serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_STREAM)
 clientSocket.connect((serverName, serverPort))
 
-sentence = input("input lowercase sentence:")
+sentence = input("input Java code(full file in string format):")
 clientSocket.send(sentence.encode())
 
-modifiedSentence = clientSocket.recv(1024)
+modifiedSentence = clientSocket.recv(10000)
 print("From Server:", modifiedSentence.decode())
 
 clientSocket.close()

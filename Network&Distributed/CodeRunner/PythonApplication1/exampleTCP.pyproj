@@ -5,7 +5,7 @@
     <ProjectGuid>42172208-6394-49e0-815a-1947f76d0dbd</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>clientTCP.py</StartupFile>
+    <StartupFile>CodeRunner.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,10 +22,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="clientTCP.py">
+    <Compile Include="Client.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="serverTCP.py" />
+    <Compile Include="CodeRunner.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

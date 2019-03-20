@@ -1,5 +1,19 @@
 # Homework3
 
+## Python TCP程序
+
+做的是一个远程运行代码的程序。打开服务器后，客户端将Java代码文件以String的形式（不能包含换行符）输入，五秒之后服务器会返回代码运行结果
+
+Server
+
+![1553047464095](C:\Users\10421\AppData\Roaming\Typora\typora-user-images\1553047464095.png)
+
+Client：
+
+![1553047491216](C:\Users\10421\AppData\Roaming\Typora\typora-user-images\1553047491216.png)
+
+
+
 ## p1
 
 a.
